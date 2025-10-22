@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+h1 {color: #fafafc;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   position: relative;
+   margin-right: 400px;
+
+}
+form {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+  background-color: #ffffffd2;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #2e2e2e;
+    margin-bottom: 25px;
+}
+
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #fafafc;
+    border: 1px solid #00adef;
+    border-radius: 25px;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+}
+
+/* Icono */
+.input-group i {
+    color: #00adef;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    color: #00adef;
+    font-size: 17px;
+}
+
+.remenber {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.remenber a {
+    color: #2e2e2e;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.remenber a:hover {
+    color: #00adef;
+    text-decoration: underline;
+}
+
+.btn-1 {
+  background-color: #007bff;
+    font-size: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+a.regis {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #2e2e2e; 
+    font-size: 15px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+a.regis:hover {
+    color: #005cef;  
+    text-decoration: none;
+}
+
+
+.btn-1:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 991px) {
+    body {
+        padding: 30px;
+    }
+
+    form {
+        width: 100%;
+    }
+}

@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  .image-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* altura completa de la ventana */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  li{
+    font-family: cursive;
+    text-align: left;
+  }
+  
+  
+  .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    object-fit: cover; /* para que el video cubra todo */
+  }
+  
+  .overlay-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+  }
+  
+  .highlight {
+    color: #501ea0; /* azul brillante para destacar */
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* para que el texto destaque sobre el video */
+  }
+  
+  
+  body {
+    background-color: #f7f9fb;
+        color: #333;
+    line-height: 1.6;
+    text-align: center;
+  }
+  button{background-color: #0b0b0b;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #f5f5f5;
+    font-size: 20px;
+    padding: 20px 80px;
+    margin-bottom: 30px; /* Este valor crea espacio debajo del botón */
+    border: none;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  }
+  button:hover{background-color: #5b5ba9;
+    border-radius: 5px;
+    color: #000000;
+    padding: 30px 90px;
+    border:#b4bf397a;
+  }
+  section.mas {
+    padding: 120px 120px;
+    display: flex;
+    flex-direction: row; /* Apilamos los elementos (el h2 en la parte superior) */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: flex-start; /* Alineamos los elementos en el inicio */
+    gap: 30px; /* Espacio entre los elementos */
+  }
+  
+  h2.ofrece {
+    font-size: 45px;
+    color: #965ec4d3;
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+  }
+  
+  h2.ofrece:hover {
+    font-size: 55px;
+    color: #6f34dc;
+    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+  }
+  
+  
+  /* Estilos de los divs que contienen las ofertas */
+  div.ofrecemos {
+    background-color: #000000;
+    color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px; /* Añade padding para que el contenido no toque los bordes */
+    flex: 1 1 30%; /* Cada div ocupa el 30% del ancho disponible */
+    text-align: center; /* Alinea el contenido de los divs */
+    transition: all 0.3s ease; /* Transición suave para hover */
+  }
+  
+  /* Efecto hover para los divs */
+  div.ofrecemos:hover {
+    background-color: #9f45d7c8;
+    color: #000000;
+    font-size: 20px; /* Cambia el tamaño de la fuente en el hover */
+    border-radius: 10px;
+    transform: translateY(-5px); /* Añade un pequeño desplazamiento para darle más dinamismo */
+  }
+  
+  /* Contenedor principal que organiza los divs */
+  .ofrecemos-container {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Distribuye los divs con espacio entre ellos */
+    align-items: flex-start; /* Alinea los elementos al principio del eje vertical */
+    gap: 30px; /* Espacio entre los divs */
+    flex-wrap: wrap; /* Permite que los divs se ajusten en pantallas pequeñas */
+    width: 100%; /* Asegura que ocupe el 100% del contenedor */
+  }
+  
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#8989c4; 
+      padding: 15px 30px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: #00e0ff;
+    border-bottom: 2px solid #00e0ff;
+  }
+  
+  
+  .login a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .login a:hover {
+    color: #88bdcd;
+  }
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin-bottom: 5px;
+    border-radius: 3px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      right: -100%;
+      top: 0;
+      height: 100vh;
+      width: 200px;
+      background-color:#8989c4; 
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px;
+      gap: 30px;
+      transition: right 0.3s ease;
+    }
+  
+    .nav-links.active {
+      right: 0;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  }
+  
+  
+  form:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  footer {
+    background-color:#8989c4; /* Color de fondo morado */
+    color: #f0f0f0;            /* Color de texto blanco/gris claro */
+    padding: 40px 20px;        /* Espaciado interno (arriba/abajo y lados) */
+  }
+  
+  .footer-container {
+    max-width: 1200px;         /* Ancho máximo del contenido */
+    margin: 0 auto;            /* Centra el contenedor */
+    display: flex;             /* Activa Flexbox para alinear elementos */
+    justify-content: space-between; /* Empuja las secciones izquierda y derecha a los extremos */
+    align-items: center;       /* Centra verticalmente el contenido */
+    flex-wrap: wrap;           /* Permite que los elementos se apilen en pantallas pequeñas */
+    gap: 20px;                 /* Espacio entre elementos si se apilan */
+  }
+  
+  .footer-left h4 {
+    margin: 0 0 10px 0;
+  }
+  
+  .company-name {
+    font-size: 1.5rem;         /* Tamaño grande para el nombre */
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 15px;       /* Espacio debajo del nombre */
+  }
+  
+  .social-icons a {
+    color: #f0f0f0;            /* Color de los íconos */
+    font-size: 1.2rem;
+    margin-right: 15px;        /* Espacio entre íconos */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transición suave para el hover */
+  }
+  
+  .social-icons a:hover {
+    color: #ffffff;            /* Color más brillante al pasar el mouse */
+    transform: scale(1.1);
+  }
+  
+  .footer-right {
+    text-align: right;
+  }
+  
+  .footer-right p {
+    margin: 5px 0;             /* Espacio vertical entre líneas de texto */
+    font-size: 0.9rem;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  h1, h2 {
+    color: #7b4d81;
+ 
+    margin-bottom: 15px;
+  }
+  .contenedor-servicios-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  .contenedor-servicios {
+    flex: 1 1 45%; /* Ocupa hasta 45% del ancho, ajustable */
+    max-width: 700px; /* Máximo ancho para no estirarse demasiado */
+    box-sizing: border-box;
+    perspective: 1000px;
+    cursor: pointer;
+    min-height: 550px; /* Para dar altura mínima */
+    position: relative;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+  }
+  
+  .contenedor-servicios.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+  
+  .card-front {
+    z-index: 2;
+    background-color: #fff;
+  }
+  
+  .card-back {
+    background-color: #f0f0f0;
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .video-container {
+    height: 300px; /* Ajusta la altura para que el iframe no deforme */
+    margin-top: 15px;
+  }
+  
+  .video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+  }
+  
+  .servicio ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+  }
+  
+/* Fondo modal */
+#userModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(30, 30, 30, 0.75); /* fondo oscuro semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor modal */
+#userModal .modal-content {
+  background: #1f2937; /* gris oscuro azulado */
+  padding: 30px 35px;
+  border-radius: 14px;
+  width: 360px;
+  max-width: 90%;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+  position: relative;
+  text-align: center;
+  color: #f9fafb; /* texto claro */
+  animation: slideDownFade 0.35s ease forwards;
+}
+
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botón cerrar */
+#userModal #closeModal {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: 600;
+  color: #9ca3af;
+  transition: color 0.25s ease;
+}
+#userModal #closeModal:hover {
+  color: #ef4444; /* rojo suave */
+}
+
+/* Título */
+#userModal h2 {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 0.03em;
+}
+
+/* Texto de párrafos */
+#userModal p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #d1d5db; /* gris claro */
+}
+
+/* Botón cerrar sesión */
+#userModal button#logoutBtn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 14px 0;
+  background-color: #3b82f6; /* azul profesional */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+#userModal button#logoutBtn:hover {
+  background-color: #2563eb; /* azul más oscuro */
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+}
